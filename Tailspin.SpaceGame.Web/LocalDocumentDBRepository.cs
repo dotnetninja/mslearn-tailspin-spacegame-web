@@ -77,11 +77,11 @@ namespace TailSpin.SpaceGame.Web
         /// <param name="queryPredicate">Predicate that specifies which items to select.</param>
         public Task<int> CountItemsAsync(Expression<Func<T, bool>> queryPredicate)
         {
-            var count = _items.AsQueryable()
+            var cnt = _items.AsQueryable()
                 .Where(queryPredicate) // filter
                 .Count(); // count
 
-            return Task<int>.FromResult(count);
+            return Task<int>.FromResult(cnt);
         }
     }
 }
